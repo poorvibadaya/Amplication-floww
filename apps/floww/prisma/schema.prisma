@@ -17,3 +17,12 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model Project {
+  createdAt   DateTime @default(now())
+  deleted     Boolean?
+  id          String   @id @default(cuid())
+  projectDesc String
+  projectName String
+  updatedAt   DateTime @updatedAt
+}
